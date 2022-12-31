@@ -1,0 +1,139 @@
+[
+    [
+        {
+            "Mrs. Dummy": "Mrs. Dummy",
+            "tient Name:": "tient Name:"
+        },
+        {
+            "Mrs. Dummy": "34 YRS / F",
+            "tient Name:": "e / Sex:"
+        },
+        {
+            "Mrs. Dummy": "Dr. Self",
+            "tient Name:": "ferred By:"
+        },
+        {
+            "Mrs. Dummy": "1002 /",
+            "tient Name:": "eg. no. / UHID:"
+        },
+        {
+            "Mrs. Dummy": "Complete Blood Count (CBC)",
+            "tient Name:": "vestigations:"
+        }
+    ],
+    [
+        {
+            "EST": "EST",
+            "HEFER": "HEFER",
+            "UNIT": "UNIT",
+            "VALUE": "VALUE"
+        },
+        {
+            "EST": "Hemoglobin L",
+            "HEFER": "12-15",
+            "UNIT": "g/dl",
+            "VALUE": "10.0"
+        },
+        {
+            "EST": "Total Leukocyte Count",
+            "HEFER": "4,000",
+            "UNIT": "cumm",
+            "VALUE": "5,700"
+        },
+        {
+            "EST": "Differential Leucocyte Count",
+            "HEFER": "",
+            "UNIT": "",
+            "VALUE": ""
+        },
+        {
+            "EST": "Neutrophils",
+            "HEFER": "40 80",
+            "UNIT": "REPORT",
+            "VALUE": "55"
+        },
+        {
+            "EST": "Lymphocyte",
+            "HEFER": "20.40",
+            "UNIT": "%",
+            "VALUE": "40"
+        },
+        {
+            "EST": "Eosinophils",
+            "HEFER": "1.6",
+            "UNIT": "%",
+            "VALUE": "02 SAMPLE"
+        },
+        {
+            "EST": "Monocytes",
+            "HEFER": "2 - 19",
+            "UNIT": "%",
+            "VALUE": "03"
+        },
+        {
+            "EST": "Basophils",
+            "HEFER": "<2",
+            "UNIT": "%",
+            "VALUE": "00"
+        },
+        {
+            "EST": "Platelet Count LABSMAR",
+            "HEFER": "1.5 4.5",
+            "UNIT": "lakhs/cumm",
+            "VALUE": "2.8"
+        },
+        {
+            "EST": "Total RBC Count",
+            "HEFER": "",
+            "UNIT": "million/cumm",
+            "VALUE": "4.7"
+        },
+        {
+            "EST": "Hematocrit Value, Hct",
+            "HEFER": "36 - 46",
+            "UNIT": "%",
+            "VALUE": "45"
+        },
+        {
+            "EST": "Mean Corpuscular Volume, MCV",
+            "HEFER": "83 - 101",
+            "UNIT": "fl",
+            "VALUE": "95,7"
+        },
+        {
+            "EST": "Mean Cell Haemoglobin, MCH L",
+            "HEFER": "27 - 32",
+            "UNIT": "Pg",
+            "VALUE": "21.3"
+        },
+        {
+            "EST": "Mean Cell Haemoglobin CON, MCHC",
+            "HEFER": "31.5 - 34.5", "UNIT": "%", "VALUE": "L 22.2"}, {"EST": "Mean Platelet Volume, MPV", "HEFER": "6.5 12", "UNIT": "IL", "VALUE": "11"}, {"EST": "R.D.W. SD", "HEFER": "39-46", "UNIT": "IL",
+            "VALUE": "40"
+        },
+        {
+            "EST": "R.D.W. CV",
+            "HEFER": "",
+            "UNIT": "%",
+            "VALUE": "12"
+        },
+        {
+            "EST": "P-LCR",
+            "HEFER": "11.6 14 19.7 42,4",
+            "UNIT": "%",
+            "VALUE": "33"
+        },
+        {
+            "EST": "P.D.W.",
+            "HEFER": "",
+            "UNIT": "",
+            "VALUE": "10.8"
+        },
+        {
+            "EST": "",
+            "HEFER": "9.6 15.2",
+            "UNIT": "fL",
+            "VALUE": ""
+        }
+    ]
+]
