@@ -27,14 +27,14 @@ export default function Home() {
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch('https://onehealthassist.com/api/v1/user/getDocData', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5N2UxYmJkMy1iZTcwLTRhYmMtOWE3MS0zZWNkMmJlNGY5MGIiLCJqdGkiOiJkN2QyNDljMzFlOWRhOWQ1ZGIyMzI0NWE2OTk0YjlmYjM1NjkyYjlmYTI3ZmY2NWZlNWQyYTQ0NmI0OTFhNzJiYjY1N2YzZWI5Y2Q4YjczMyIsImlhdCI6MTY3MjQ3NTQzNy40ODgwNDksIm5iZiI6MTY3MjQ3NTQzNy40ODgwNTUsImV4cCI6MTcwNDAxMTQzNy40NzgxLCJzdWIiOiI3OSIsInNjb3BlcyI6W119.SakNNGQfoBVOS4HrRmKsx4Mi5v-uO9qQK7FyB_LAZ6NTH-2BrxPd2mZpUq9H-47eisZtkgIL33smN_pXExMLXgrm-TAokDyj3IYj_SepXysTYS-HqxGug9OE19vMRU_FOGFP-mKVBIYMDiLHdG8kA1U01XjKkokWbaXPSdrXlqRSAy5WdsvZjLqTyQE7AfaDOigK_YnbR6qtkLtwpcRTfMMIP3lwijvmJHV9dA5yPFUn-bWa_i2cJ4ysGsNOh8Uf3ublNxofVrcCiIl8dadXNzgIzg04NaND5nW516gPFHaLVgj1HKT5aLU_39TQ9tPxmAbnMcZeA0EA71tJxWqUmiUi938lOh1xoyL5zZscL6f3-g6pzbfQ0ji5Pv-thextORZsE2-gF9eiIDlQvj8cUXNKZf6IqXCdhj3fQTS4xE2tXdGzycvOuzwUj6Uf7RohmSwqg3xT3BjfgSfUjs057pWM-DUU6KJ2d-WIi2ulPFi7LtNAfYmGA8_kOec57fMD2JPPX6xFqw8rbQi8fvS7DmQDmmxMN2b5vogNiSSEGjfkqM1JfBYtkmQw47SwuHi-V5n4fLmKpa3AA2p0CcDQXu7HJaiU4Z8fGmTVEZDGGqk6TRkfA_2A0zNBw_pWNmYYC9qdkWQdkw49hLra3Q12WQymcpx-gPPxuSh9vfMsNIg`, // notice the Bearer before your token
-                },
+                method: 'POST'
+                // headers: {
+                //     'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5N2UxYmJkMy1iZTcwLTRhYmMtOWE3MS0zZWNkMmJlNGY5MGIiLCJqdGkiOiJkN2QyNDljMzFlOWRhOWQ1ZGIyMzI0NWE2OTk0YjlmYjM1NjkyYjlmYTI3ZmY2NWZlNWQyYTQ0NmI0OTFhNzJiYjY1N2YzZWI5Y2Q4YjczMyIsImlhdCI6MTY3MjQ3NTQzNy40ODgwNDksIm5iZiI6MTY3MjQ3NTQzNy40ODgwNTUsImV4cCI6MTcwNDAxMTQzNy40NzgxLCJzdWIiOiI3OSIsInNjb3BlcyI6W119.SakNNGQfoBVOS4HrRmKsx4Mi5v-uO9qQK7FyB_LAZ6NTH-2BrxPd2mZpUq9H-47eisZtkgIL33smN_pXExMLXgrm-TAokDyj3IYj_SepXysTYS-HqxGug9OE19vMRU_FOGFP-mKVBIYMDiLHdG8kA1U01XjKkokWbaXPSdrXlqRSAy5WdsvZjLqTyQE7AfaDOigK_YnbR6qtkLtwpcRTfMMIP3lwijvmJHV9dA5yPFUn-bWa_i2cJ4ysGsNOh8Uf3ublNxofVrcCiIl8dadXNzgIzg04NaND5nW516gPFHaLVgj1HKT5aLU_39TQ9tPxmAbnMcZeA0EA71tJxWqUmiUi938lOh1xoyL5zZscL6f3-g6pzbfQ0ji5Pv-thextORZsE2-gF9eiIDlQvj8cUXNKZf6IqXCdhj3fQTS4xE2tXdGzycvOuzwUj6Uf7RohmSwqg3xT3BjfgSfUjs057pWM-DUU6KJ2d-WIi2ulPFi7LtNAfYmGA8_kOec57fMD2JPPX6xFqw8rbQi8fvS7DmQDmmxMN2b5vogNiSSEGjfkqM1JfBYtkmQw47SwuHi-V5n4fLmKpa3AA2p0CcDQXu7HJaiU4Z8fGmTVEZDGGqk6TRkfA_2A0zNBw_pWNmYYC9qdkWQdkw49hLra3Q12WQymcpx-gPPxuSh9vfMsNIg`, // notice the Bearer before your token
+                // },
             });
             const data = await response.json()
             const respData = data?.data?.allData
-            respData.map(e => e.map(f => f.data.shift()))
+            respData.map(e => e.map(f => f?.data?.shift()))
             console.log("------------------------response data------------------------")
             // console.log(JSON.stringify(respData.map(e => e.map(f => f.data.map(g => Object.values(g).map(h => h.split('method')[0]))))))
             // console.log(JSON.stringify(respData))
@@ -89,7 +89,7 @@ export default function Home() {
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /SODIUM|POTASSIUM|CHLORIDE/i.test(JSON.stringify(g)))))
                 setFilterData(fltrDta)
             } else {
-                let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g).length > 3))).map(f => f.filter(e => e.length))
+                let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => JSON.stringify(g).toLowerCase().includes(toSearch.toLowerCase()))))
                 setFilterData(fltrDta)
             }
