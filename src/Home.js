@@ -37,7 +37,7 @@ export default function Home() {
             respData.map(e => e.map(f => f?.data?.shift()))
             console.log("------------------------response data------------------------")
             // console.log(JSON.stringify(respData.map(e => e.map(f => f.data.map(g => Object.values(g).map(h => h.split('method')[0]))))))
-            // console.log(JSON.stringify(respData))
+            console.log(JSON.stringify(respData))
 
             setData(respData)
         }
