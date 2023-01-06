@@ -20,6 +20,9 @@ export default function Home() {
     const headings = []
     const [body, setBody] = useState([])
 
+    const [reportHeading, setReportHeading] = useState("Test Results")
+
+    const [activeIndex, setActiveIndex] = useState(-1)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -50,46 +53,76 @@ export default function Home() {
         }
         if (toSearch.length > 2) {
             if (toSearch.toLowerCase() == "cbc" || toSearch.toLowerCase() == "blood count" || toSearch.toLowerCase() == "complete blood count") {
+                setReportHeading("Complete Blood Count")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /RED BLOOD|HEMOGLOBIN|HEMATOCRIT|MEAN CORPUSCULAR|RED CELL|PLATELET|WHITE BLOOD/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "wbc differential count" || toSearch.toLowerCase() == "wbc diff" || toSearch.toLowerCase() == "wbc") {
+                setReportHeading("WBC differential count")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /SEGMENTED NEUTROPHILS|EOSINOPHILS|LYMPHOCYTES|MONOCYTES|BASOPHILS|WHITE BLOOD/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "urinalysis" || toSearch.toLowerCase() == "urin" || toSearch.toLowerCase() == "urine") {
+                setReportHeading("Urinalysis")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /COLOR|APPEARANCE|SPECIFIC GRAVITY|GLUCOSE|PROTEIN|KETONES|BILIRUBIN|UROBILINOGEN|NITRITE|EPITHELIAL CELLS|CASTS|CRYSTALS|BACTERIA/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "diabetes" || toSearch.toLowerCase() == "cardiac risk" || toSearch.toLowerCase() == "cardiac") {
+                setReportHeading("Diabetes")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /FASTING BLOOD GLUCOSE|PLASMA|TRIGLYCERIDES|CHOLESTEROL|HDL CHOLESTEROL|DIRECT LDL CHOLESTEROL|NON HDL CHOLESTEROL|CHOL|HDL RATIO|LDL RATIO|VERY LOW DENSITY LIPOPROTEIN/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "kidney" || toSearch.toLowerCase() == "kidney profile" || toSearch.toLowerCase() == "kidney ") {
+                setReportHeading("Kidney profile")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /BLOOD UREA NITROGEN|CREATININE|URIC ACID/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "liver" || toSearch.toLowerCase() == "liver profile" || toSearch.toLowerCase() == "liver ") {
+                setReportHeading("Liver profile")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /BILIRUBIN TOTAL|BILIRUBIN|ALANINE AMINOTRANSFERASE|ASPARTATE AMINOTRANSFERASE/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "thyro check" || toSearch.toLowerCase() == "thyro" || toSearch.toLowerCase() == "thyro ") {
+                setReportHeading("Thyro check")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /T3|T4|TSH 3RD GENERATION/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "hepatitis b" || toSearch.toLowerCase() == "hepatitis" || toSearch.toLowerCase() == "hepatitis b surface antigen") {
+                setReportHeading("Hepatitis B")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /HEPATITIS B SURFACE ANTIGEN|PATIENT VALUE/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else if (toSearch.toLowerCase() == "electrolytes" || toSearch.toLowerCase() == "electrolyte" || toSearch.toLowerCase() == "electrolytes ") {
+                setReportHeading("Electrolytes")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => /SODIUM|POTASSIUM|CHLORIDE/i.test(JSON.stringify(g)))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             } else {
+                setReportHeading("Test Results")
                 let removedExtra = data.map(e => e?.map(f => f?.data?.filter(g => Object.keys(g)?.length > 3))).map(f => f.filter(e => e?.length))
                 const fltrDta = removedExtra.map(e => e.map(f => f.filter(g => JSON.stringify(g).toLowerCase().includes(toSearch.toLowerCase()))))
-                setFilterData(fltrDta)
+                let removeEmptyArr = fltrDta.map(f => f?.filter(e => e?.length))
+                setFilterData(removeEmptyArr)
             }
+        }
+    }
+
+    const headerClick = (index) => {
+        if (activeIndex == index) {
+            setShowTable(!showTable)
+            setActiveIndex(-1)
+        } else {
+            setShowTable(!showTable)
+            setActiveIndex(index)
         }
     }
 
@@ -118,7 +151,10 @@ export default function Home() {
                 </View>
                 <TouchableOpacity
                     style={{ paddingRight: "2%" }}
-                    onPress={() => setSearchString("")}
+                    onPress={() => {
+                        setSearchString(""),
+                            setShowTable(true)
+                    }}
                 >
                     <Icon name="cross" size={25} color="#8F8F8F" />
                 </TouchableOpacity>
@@ -134,20 +170,22 @@ export default function Home() {
 
                                     {/* Date row */}
                                     <TouchableOpacity
-                                        style={{ borderWidth: 1, borderColor: "#CA8A66", justifyContent: "center", marginBottom: 5, height: 25 }}
-                                        onPress={() => setShowTable(!showTable)}
+                                        style={{ borderWidth: 1, borderColor: "#CA8A66", justifyContent: "space-between", marginBottom: 5, height: 40, flexDirection: "row", alignItems: "center" }}
+                                        onPress={() => headerClick(index)}
                                     >
-                                        <Text style={{ color: "black", fontWeight: "bold", paddingLeft: 7 }}>{data.map(e => e.map(f => f.reportDate))[0][index]}</Text>
+                                        <Text style={{ color: "black", fontWeight: "bold", paddingLeft: 7 }}>{reportHeading}</Text>
+                                        {/* <Text style={{ color: "black", fontWeight: "bold" }}>{index}</Text> */}
+                                        <Text style={{ color: "black", fontWeight: "bold", paddingRight: 7 }}>{data.map(e => e.map(f => f.reportDate))[0][index]}</Text>
                                     </TouchableOpacity>
 
                                     {/* Table */}
-                                    <Collapsible collapsed={showTable}>
+                                    <Collapsible collapsed={activeIndex == index ? false : true}>
                                         <Table borderStyle={{ borderWidth: 1, borderColor: '#CA8A66' }}>
 
                                             <Row
                                                 data={filterData.length == 0 ? [] : Object.keys(item[0] || {})}
-                                                // style={{ backgroundColor: "red" }}
-                                                textStyle={{ fontWeight: 'bold', color: "#000", textAlign: 'center' }}
+                                                // style={{ backgroundColor: "#CA8A66" }}
+                                                textStyle={{ fontWeight: 'bold', color: "#CA8A66", textAlign: 'center' }}
                                             />
 
                                             {item.map((e, index) => (
